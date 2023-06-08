@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prestyn Portfolio</title>
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	<!-- https://fonts.google.com/ -->
+	<link href="css/magnific-popup.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="tm-container-fluid">
+		<section class="tm-site-header tm-flex-center tm-mb-50 tm-bgcolor-1 tm-border-rounded">
+			<img
+			src="https://api.dicebear.com/6.x/croodles-neutral/svg?seed=Baby"
+			alt="avatar" width=200 height=200/>
+			<h1>Prestyn Contreras</h1>
+		</section>
+
+		<section class="tm-contact tm-mb-50 tm-bgcolor-3 tm-border-rounded">
+			<div class="tm-contact-header tm-flex-center">
+				<img src="https://api.dicebear.com/6.x/thumbs/svg?seed=Nala" alt="avatar" />
+			</div>
+			<div>
+				<h4 class="tm-text-white">
+					Motto:Personal Motto:Live life to your fullest
+				</h4>
+
+			</div>
+			<div class="tm-contact-form-container">
+				<div id="contact-form" action="" method="POST" class="tm-contact-form">
+					<h3 class="tm-text-white">Name: Fluffy</h3>
+					<h3 class="tm-text-white">School: Deer Valley Highschool</h3>
+				</div>
+			</div>
+		</section>
+
+		<section class="tm-about tm-mb-80 tm-p-50 tm-bgcolor-2 tm-border-rounded">
+			<div class="tm-about-header tm-flex-center">
+				<img 
+				src="https://api.dicebear.com/6.x/croodles-neutral/svg?seed=Baby"
+				alt="avatar" width="50" height="50"  />
+				<h2>About Us</h2>
+			</div>
+			<div class="tm-about-text">
+				<p class="tm-mb-40">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam quis fugit iusto
+					ipsam deleniti, ducimus dolor dignissimos deserunt a corrupti veritatis iste officiis modi ratione,
+					velit distinctio placeat maiores saepe. Magnam odit quod quos modi sunt reprehenderit aperiam, atque
+					et cupiditate omnis, eligendi ducimus rerum porro aspernatur culpa similique aut?</p>
+				<p class="tm-mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste hic recusandae dolor
+					eius, totam adipisci qui voluptatum libero possimus sequi.</p>
+			</div>
+		</section>
+
+		<div class="tm-gallery-section tm-mb-80">
+			<ul class="filters-button-group tm-mb-40">
+				<li><a href="#" data-filter=".AT">Adventure Time</a></li>
+				<li><a href="#" data-filter=".nature">Nature</a></li>
+				<li><a href="#" data-filter=".portraits">Portraits</a></li>
+				<li><a href="#" class="active" data-filter="*">Show All</a></li>
+			</ul>
+			<div class="tm-gallery">
+				<div class="tm-gallery-item AT tools">
+					<a href="img/img-01.jpg">
+						<img src="img/tn-img-01.jpg" alt="City Scape" class="img-fluid" />
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+
+		<footer class="tm-footer">
+			by: <a rel="sponsored" href="#" class="tm-link-gray">[NAME]</a>
+		</footer>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script>
+		$(function () {
+			// Init the image gallery
+			var $gallery = $(".tm-gallery").isotope({
+				itemSelector: ".tm-gallery-item",
+				layoutMode: "fitRows"
+			});
+
+			// Layout Isotope after each image loads
+			$gallery.imagesLoaded().progress(function () {
+				$gallery.isotope("layout");
+			});
+
+			$(".filters-button-group").on("click", "a", function (e) {
+				e.preventDefault();
+				var filterValue = $(this).attr("data-filter");
+				$gallery.isotope({ filter: filterValue });
+				$('.filters-button-group a').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			// Magnific Pop up-Code Here
+
+		});
+	</script>
+</body>
+</html>
